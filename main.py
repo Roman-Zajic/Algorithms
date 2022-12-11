@@ -7,10 +7,7 @@ Last modified:  2022-12-11
 """
 
 import math
-
-array = [3, 9, 4, 1, 2]
-array_sorted = sorted(array)
-element = 1
+import random
 
 
 def linear_search(element, array):
@@ -30,7 +27,6 @@ def linear_search(element, array):
 
 
 def binary_search(element, array):
-
     high = len(array) - 1
     low = 0
 
@@ -49,17 +45,15 @@ def binary_search(element, array):
 
 
 def jump_search(element, array):
-
     n = len(array)
     jump = int(math.sqrt(n))
     step = 0
 
     while array[step * jump] < element:
-
         step += 1
     step = min(0, step - 1)
 
-    #linear search
+    # linear search
     i = step * jump
     while i < n:
 
@@ -74,8 +68,26 @@ def jump_search(element, array):
 
 
 if __name__ == '__main__':
-    # linear_search(element, array)
-    jump_search(2, array_sorted)
+
+    # creating 100 element arrays sorted and not sorted
+    array_sorted = list(range(1, 100))
+    array_not_sorted = sorted(array_sorted, key=lambda x: random.random())
+
+    # randomly picking element
+    element = random.randint(1, 100)
+
+    # linear search
+    linear_search(element, array_not_sorted)
+
+    # binary search
+    binary_search(element, array_sorted)
+
+    #jump search
+    jump_search(element, array_sorted)
+
     print(array_sorted)
-    for i in array_sorted:
-        jump_search(i, array_sorted)
+
+    # check all elements
+
+    # for i in array_sorted:
+    #     jump_search(i, array_sorted)
