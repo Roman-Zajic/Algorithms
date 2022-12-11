@@ -49,7 +49,7 @@ def jump_search(element, array):
     jump = int(math.sqrt(n))
     step = 0
 
-    while array[step * jump] < element:
+    while step * jump < n and array[step * jump] < element:
         step += 1
     step = min(0, step - 1)
 
@@ -70,7 +70,7 @@ def jump_search(element, array):
 if __name__ == '__main__':
 
     # creating 100 element arrays sorted and not sorted
-    array_sorted = list(range(1, 100))
+    array_sorted = list(range(1, 101))
     array_not_sorted = sorted(array_sorted, key=lambda x: random.random())
 
     # randomly picking element
@@ -82,12 +82,14 @@ if __name__ == '__main__':
     # binary search
     binary_search(element, array_sorted)
 
-    #jump search
+    # jump search
     jump_search(element, array_sorted)
 
     print(array_sorted)
+    print(array_not_sorted)
 
     # check all elements
 
     # for i in array_sorted:
-    #     jump_search(i, array_sorted)
+    #    jump_search(i, array_sorted)
+    #    binary_search(i, array_sorted)
