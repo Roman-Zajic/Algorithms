@@ -6,3 +6,5 @@ Author:         Roman Zajic
 Last modified:  2022-12-11
 """
 
+if __name__ == '__main__':
+    print('test')
