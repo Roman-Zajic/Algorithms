@@ -6,5 +6,13 @@ Author:         Roman Zajic
 Last modified:  2022-12-11
 """
 
+array = [3, 9, 4, 1, 2]
+element = 4
+
+
+def linear_search(arg, array):
+    print(array[0])
+
+
 if __name__ == '__main__':
-    print('test')
+    linear_search(element, array)
