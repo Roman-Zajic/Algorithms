@@ -10,7 +10,15 @@ Last modified:  2022-12-11
 
 import random
 import search
+import sort
 
+def test_search(algorithm, element, array):
+    result = algorithm(element, array)
+    return result
+
+def test_sort(algorithm, array):
+    result = algorithm(array)
+    return result
 
 if __name__ == '__main__':
 
@@ -18,23 +26,14 @@ if __name__ == '__main__':
     array_sorted = list(range(1, 101))
     array_not_sorted = sorted(array_sorted, key=lambda x: random.random())
 
+    # sort algorithms
+    test_sort(sort.selection_sort, array_not_sorted)
+    test_sort(sort.bubble_sort, array_not_sorted)
+
     # randomly picking element
     element = random.randint(1, 100)
 
-    # linear search
-    search.linear_search(element, array_not_sorted)
-
-    # binary search
-    search.binary_search(element, array_sorted)
-
-    # jump search
-    search.jump_search(element, array_sorted)
-
-    print(array_sorted)
-    print(array_not_sorted)
-
-    # check all elements
-
-    # for i in array_sorted:
-    #    jump_search(i, array_sorted)
-    #    binary_search(i, array_sorted)
+    # search algorithms
+    test_search(search.linear_search, element, array_not_sorted)
+    test_search(search.binary_search, element, array_sorted)
+    test_search(search.jump_search, element, array_sorted)
