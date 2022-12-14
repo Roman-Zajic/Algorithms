@@ -20,6 +20,7 @@ def test_sort(algorithm, array):
     result = algorithm(array)
     return result
 
+
 if __name__ == '__main__':
 
     # creating 100 element arrays sorted and not sorted
@@ -29,6 +30,7 @@ if __name__ == '__main__':
     # sort algorithms
     test_sort(sort.selection_sort, array_not_sorted)
     test_sort(sort.bubble_sort, array_not_sorted)
+    test_sort(sort.merge_sort, array_not_sorted)
 
     # randomly picking element
     element = random.randint(1, 100)
