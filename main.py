@@ -31,6 +31,7 @@ if __name__ == '__main__':
     test_sort(sort.selection_sort, array_not_sorted)
     test_sort(sort.bubble_sort, array_not_sorted)
     test_sort(sort.merge_sort, array_not_sorted)
+    print(array_not_sorted)
 
     # randomly picking element
     element = random.randint(1, 100)

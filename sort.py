@@ -35,10 +35,10 @@ def bubble_sort(array):
 
     for i in range(n):
         for j in range(n - i - 1):
-            if array[j] > array[i]:
-                temp = array[i]
-                array[i] = array[j]
-                array[j] = temp
+            if array[j] > array[j + 1]:
+                temp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = temp
 
     print(array)
     return 0
@@ -80,5 +80,4 @@ def merge_sort(array):
             j += 1
             k += 1
 
-    print(array)
     return 0
