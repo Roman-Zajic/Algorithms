@@ -3,7 +3,7 @@
 The library contains common algorithms and data structure examples.
 Sort algorithms.
 
-Title:          Most Common Algorithms
+Title:          Common Algorithms
 Author:         Roman Zajic
 Last modified:  2022-12-11
 
@@ -26,7 +26,6 @@ def selection_sort(array):
         array[low] = array[i]
         array[i] = temp
 
-    print(array)
     return 0
 
 def bubble_sort(array):
@@ -40,7 +39,6 @@ def bubble_sort(array):
                 array[j] = array[j + 1]
                 array[j + 1] = temp
 
-    print(array)
     return 0
 
 def merge_sort(array):
@@ -84,12 +82,11 @@ def merge_sort(array):
 
 
 def partition(array, low, high):
-    # TODO: test quick sort
 
     i = low
     pivot = array[high]
 
-    for j in range(low, high - 1):
+    for j in range(low, high):
         if array[j] < pivot:
 
             # swap array[i] and array[j]
@@ -102,8 +99,8 @@ def partition(array, low, high):
 
             i += 1
 
-    temp = array[i + 1]
-    array[i + 1] = array[high]
+    temp = array[i]
+    array[i] = array[high]
     array[high] = temp
 
     return i

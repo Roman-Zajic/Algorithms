@@ -3,7 +3,7 @@
 The library contains common algorithms and data structure examples.
 Search algorithms.
 
-Title:          Most Common Algorithms
+Title:          Common Algorithms
 Author:         Roman Zajic
 Last modified:  2022-12-11
 
