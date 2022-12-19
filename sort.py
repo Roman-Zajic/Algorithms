@@ -22,7 +22,7 @@ def selection_sort(array):
                 low = j
 
         # swap first and lowest
-        (array[low], array[i]) = (array[i], array[low])
+        array[low], array[i] = array[i], array[low]
 
     return 0
 
@@ -35,7 +35,7 @@ def bubble_sort(array):
         for j in range(n - i - 1):
             if array[j] > array[j + 1]:
                 # swap if next element is lower
-                (array[j], array[j + 1]) = (array[j + 1], array[j])
+                array[j], array[j + 1] = array[j + 1], array[j]
 
     return 0
 
@@ -88,10 +88,10 @@ def partition(array, low, high):
     for j in range(low, high):
         if array[j] < pivot:
             # swap if the element is lower then pivot
-            (array[i], array[j]) = (array[j], array[i])
+            array[i], array[j] = array[j], array[i]
             i += 1
 
-    (array[i], array[high]) = (array[high], array[i])
+    array[i], array[high] = array[high], array[i]
 
     return i
 
