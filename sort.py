@@ -22,11 +22,10 @@ def selection_sort(array):
                 low = j
 
         # swap first and lowest
-        temp = array[low]
-        array[low] = array[i]
-        array[i] = temp
+        (array[low], array[i]) = (array[i], array[low])
 
     return 0
+
 
 def bubble_sort(array):
 
@@ -35,11 +34,11 @@ def bubble_sort(array):
     for i in range(n):
         for j in range(n - i - 1):
             if array[j] > array[j + 1]:
-                temp = array[j]
-                array[j] = array[j + 1]
-                array[j + 1] = temp
+                # swap if next element is lower
+                (array[j], array[j + 1]) = (array[j + 1], array[j])
 
     return 0
+
 
 def merge_sort(array):
 
@@ -88,22 +87,14 @@ def partition(array, low, high):
 
     for j in range(low, high):
         if array[j] < pivot:
-
-            # swap array[i] and array[j]
-            temp = array[i]
-            array[i] = array[j]
-            array[j] = temp
-
-            # swapping element at i with element at j
-            # (array[i], array[j]) = (array[j], array[i])
-
+            # swap if the element is lower then pivot
+            (array[i], array[j]) = (array[j], array[i])
             i += 1
 
-    temp = array[i]
-    array[i] = array[high]
-    array[high] = temp
+    (array[i], array[high]) = (array[high], array[i])
 
     return i
+
 
 def quick_sort(array, low, high):
 
