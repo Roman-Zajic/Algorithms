@@ -81,3 +81,39 @@ def merge_sort(array):
             k += 1
 
     return 0
+
+
+def partition(array, low, high):
+    # TODO: test quick sort
+
+    i = low
+    pivot = array[high]
+
+    for j in range(low, high - 1):
+        if array[j] < pivot:
+
+            # swap array[i] and array[j]
+            temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+
+            # swapping element at i with element at j
+            # (array[i], array[j]) = (array[j], array[i])
+
+            i += 1
+
+    temp = array[i + 1]
+    array[i + 1] = array[high]
+    array[high] = temp
+
+    return i
+
+def quick_sort(array, low, high):
+
+    if low < high:
+
+        pivot = partition(array, low, high)
+        quick_sort(array, low, pivot - 1)
+        quick_sort(array, pivot + 1, high)
+
+    return 0
