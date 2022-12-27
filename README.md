@@ -1,4 +1,3 @@
 # Algorithms
 
-[![Top Language]
-(https://img.shields.io/github/languages/top/Roman-Zajic/Algorithms?style=plastic)]
+![GitHub top language](https://img.shields.io/github/languages/top/Roman-Zajic/Algorithms?style=plastic)
